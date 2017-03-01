@@ -1,0 +1,21 @@
+<div ng-app="app">
+  <div ng-controller="peopleCtrl">
+    <h1>List of People</h1>
+    <ul>
+      <li ng-repeat="person in people" ng-click="showBio(person)">
+        <p>Name: {{person.name}}</p>
+        <p> BioVisible: {{person.bioVisible}}</p>
+        <p ng-if="person.bioVisible === true" >{{person.bio}}</p>
+        
+      </li>
+    </ul>
+
+    <div>
+      Add Task: 
+      <p>Name: <input ng-model="newPersonName"></p>
+      <p>Bio: <input ng-model="newPersonBio"></p>
+      <button ng-click="addPerson(newPersonName, newPersonBio)">Add Person</button>
+    </div>
+
+  </div>
+</div>
